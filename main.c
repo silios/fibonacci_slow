@@ -9,32 +9,32 @@ long timediff(clock_t t1, clock_t t2) {
 
 long fibonacci(long i) {
 
-   if(i == 0) {
-      return 0;
-   }
+    if(i == 0) {
+        return 0;
+    }
 
-   if(i == 1) {
-      return 1;
-   }
-   return fibonacci(i-1) + fibonacci(i-2);
+    if(i == 1) {
+        return 1;
+    }
+    return fibonacci(i-1) + fibonacci(i-2);
 }
 
 int  main() {
 
-   clock_t t1, t2;
-   long elapsed;
-   int diff;
-   long i;
+    clock_t t1, t2;
+    long elapsed;
+    int diff;
+    long i;
 
-   for (i = 0; i < 100; i++) {
-      t1 = clock();
-      printf("%d",i);
-      printf(" : %d", fibonacci(i));
-      t2 = clock();
-      elapsed = timediff(t1, t2);
-      printf(" - took : %ld ms\t\n", elapsed);
-   }
+    for (i = 0; i < 100; i++) {
+        t1 = clock();
+        printf("%d",i);
+        printf(" : %d", fibonacci(i));
+        t2 = clock();
+        elapsed = timediff(t1, t2);
+        printf(" - took : %ld ms\t\n", elapsed);
+    }
 
-   printf("\n");
-   return 0;
+    printf("\n");
+    return 0;
 }
